@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #a5e695cf;
+    border: 3px solid #0f6d08;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  label,
+  input,
+  select,
+  textarea {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0f6d08;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+</style>
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <label for="dateOfBirth">Date of Birth:</label>
+      <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+
+      <label for="contactNumber">Contact Number:</label>
+      <input type="tel" id="contactNumber" name="contactNumber" pattern="[0-9]{10}" required>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+<script>
+  document.getElementById("registrationForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+  
+    const fullName = document.getElementById("fullName").value;
+    const dateOfBirth = document.getElementById("dateOfBirth").value;
+    const gender = document.getElementById("gender").value;
+    const address = document.getElementById("address").value;
+    const contactNumber = document.getElementById("contactNumber").value;
+  
+    // Here you can perform additional validation or submit the form to the server.
+    // For this example, let's just log the values.
+    console.log("Full Name:", fullName);
+    console.log("Date of Birth:", dateOfBirth);
+    console.log("Gender:", gender);
+    console.log("Address:", address);
+    console.log("Contact Number:", contactNumber);
+  
+    // Optionally, you can reset the form after submission
+    // event.target.reset();
+  });
+</script>
+
+  <!--<script src="script.js"></script>-->
+</body>
+</html>
